@@ -39,8 +39,8 @@ test: &test
   encoding: unicode
   database: rforum_t
   pool: 5
-  username: rforum
-  password: rforum
+  username: rforum_t
+  password: rforum_t
 
 production:
   adapter: postgresql
