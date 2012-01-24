@@ -8,5 +8,11 @@ namespace :db do
       title = "Topic #{n+1}: #{fake}"
       Topic.create!(:title => title)
     end
+
+    user = User.create!(:name => 'First User',
+                        :email => 'user@example.com',
+                        :password => 'please',
+                        :password_confirmation => 'please')
+
   end
 end

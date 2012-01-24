@@ -4,6 +4,7 @@ gem 'rails', '3.0.9'
 gem 'pg', '0.12.2'
 gem 'will_paginate', '3.0.pre2'
 gem 'jquery-rails', '1.0.19'
+gem 'devise'
 
 group :development do
   gem 'rspec-rails', '2.6.1'

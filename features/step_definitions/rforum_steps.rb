@@ -2,8 +2,8 @@ Given /^a topic with the title "([^"]*)"$/ do |title|
   Topic.create!(:title => title)
 end
 
-When /^I am on the topics page$/ do
-  visit topics_path
+When /^I am on the home page$/ do
+  visit root_path
 end
 
 Then /^I should see "([^"]*)" listed in a full list of topics$/ do |title|

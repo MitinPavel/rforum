@@ -1,4 +1,9 @@
 Rforum::Application.routes.draw do
+  root :to => "topics#index"
+
+  devise_for :users
+  resources :users, :only => :show
+
   resources :topics
 
   # The priority is based upon order of creation:
