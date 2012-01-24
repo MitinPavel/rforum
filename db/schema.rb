@@ -10,7 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120124085309) do
+ActiveRecord::Schema.define(:version => 20120124222631) do
+
+  create_table "messages", :force => true do |t|
+    t.text     "content"
+    t.integer  "user_id"
+    t.integer  "topic_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "messages", ["created_at"], :name => "index_messages_on_created_at"
+  add_index "messages", ["topic_id"], :name => "index_messages_on_topic_id"
+  add_index "messages", ["user_id"], :name => "index_messages_on_user_id"
 
   create_table "topics", :force => true do |t|
     t.string   "title"
@@ -35,6 +47,7 @@ ActiveRecord::Schema.define(:version => 20120124085309) do
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["name"], :name => "index_users_on_name", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
 
 end
