@@ -20,4 +20,6 @@ describe Topic do
   it "should create a new instance given valid attributes" do
     Topic.create!(@attr)
   end
+
+  it { should have_many(:messages) }
 end

@@ -25,3 +25,16 @@ end
 Then /^I should see a "([^"]*)" link$/ do |topics_link|
   page.should have_link(topics_link, :href => topics_path)
 end
+
+When /^I am on the page showing a topic with the title "([^"]*)"$/ do |title|
+  topic = Topic.find_by_title(title)
+  visit topic_path(topic)
+end
+
+Then /^I should see a message with the content "([^"]*)"$/ do |content|
+  page.should have_content(content)
+end
+
+Then /^I should not see a message with the content "([^"]*)"$/ do |content|
+  page.should_not have_content(content)
+end

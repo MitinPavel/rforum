@@ -251,6 +251,27 @@ table.topics tr td.topic span.timestamp {
   color: #666;
 }
 
+table.messages {
+  margin-top: 1em;
+}
+
+table.messages tr {
+  height: 70px;
+}
+
+table.messages tr td.message {
+  border-top: 1px solid #ccc;
+  vertical-align: top;
+  padding-top: 10px;
+}
+
+table.messages tr td.message span.timestamp {
+  display: block;
+  float: right;
+  font-size: 85%;
+  color: #666;
+}
+
 div.user_info img {
   padding-right: 0.1em;
 }

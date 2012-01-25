@@ -4,6 +4,9 @@
       <h1>
         <%= @topic.title %>
       </h1>
+      <table class="messages" summary="Topic messages">
+        <%= render @messages %>
+      </table>
     </td>
   </tr>
 </table>
