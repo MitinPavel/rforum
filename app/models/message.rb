@@ -16,4 +16,6 @@ class Message < ActiveRecord::Base
   belongs_to :topic
 
   validates_presence_of :topic_id
+
+  default_scope :order => 'messages.created_at ASC'
 end

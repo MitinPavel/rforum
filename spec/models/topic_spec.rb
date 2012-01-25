@@ -22,4 +22,12 @@ describe Topic do
   end
 
   it { should have_many(:messages) }
+
+  it "should have the right messages in the right order" do
+    topic = Topic.create(@attr)
+    msg1 = Factory(:message, :topic => topic, :created_at => 1.hour.ago)
+    msg2 = Factory(:message, :topic => topic, :created_at => 1.day.ago)
+
+    topic.messages.should == [msg2, msg1]
+  end
 end
