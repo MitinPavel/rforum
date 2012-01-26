@@ -6,7 +6,7 @@ When /^I am on the home page$/ do
   visit root_path
 end
 
-Then /^I should see "([^"]*)" listed in a full list of topics$/ do |title|
+Then /^I should see "([^"]*)" listed in a topic list$/ do |title|
   page.should have_selector("table.topics tr td", :text => title)
 end
 

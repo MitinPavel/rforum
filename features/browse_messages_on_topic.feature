@@ -1,5 +1,5 @@
 Feature: Browse messages on topic
-  So that I can browse through the messages on topic
+  In order to browse through the messages on topic
   As a visitor
   I want to be able to read the messages on topic
 

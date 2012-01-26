@@ -11,8 +11,9 @@ namespace :db do
 
     Topic.all(:limit => 6).each do |topic|
       (1 + rand(9)).times do
-        topic.messages.create!(
+        msg = topic.messages.create!(
           :content => Faker::Lorem.paragraph(1 + rand(3)))
+        msg.update_attribute :created_at, rand(4320).minutes.ago
       end
     end
 
