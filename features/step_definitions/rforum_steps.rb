@@ -38,3 +38,29 @@ end
 Then /^I should not see a message with the content "([^"]*)"$/ do |content|
   page.should_not have_content(content)
 end
+
+Given /^I am a signed\-in user$/ do
+  user = Factory(:user)
+  visit root_path
+  click_link('Login')
+  fill_in('Email', :with => user.email)
+  fill_in('Password', :with => user.password)
+  click_button('Sign in')
+end
+
+Given /^I fill in "([^"]*)" with "([^"]*)"$/ do |field, value|
+  fill_in(field, :with => value)
+end
+
+When /^I press "([^"]*)"$/ do |name|
+  click_button(name)
+end
+
+Then /^I should be on the page showing a topic with the title "([^"]*)"$/ do |title|
+  topic = Topic.find_by_title(title)
+  current_path.should == topic_path(topic)
+end
+
+Then /^a message containing "([^"]*)" should be in a topic titled "([^"]*)"$/ do |message_content, topic_title|
+  Message.find_by_content(message_content).topic.title.should == topic_title
+end

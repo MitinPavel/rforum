@@ -1,0 +1,10 @@
+<h2>Reply to the topic</h2>
+<%= form_for([@topic, @message]) do |f| %>
+  <div class="field">
+    <%= f.label :content, :class => 'invisible' %>
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+<% end %>

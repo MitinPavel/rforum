@@ -4,8 +4,9 @@ Rforum::Application.routes.draw do
   devise_for :users
   resources :users, :only => :show
 
-  resources :topics
-  resources :messages, :only => [:create, :destroy]
+  resources :topics do
+    resources :messages, :only => [:new, :create, :destroy]
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

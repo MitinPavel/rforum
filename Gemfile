@@ -4,7 +4,7 @@ gem 'rails', '3.0.9'
 gem 'pg', '0.12.2'
 gem 'will_paginate', '3.0.pre2'
 gem 'jquery-rails', '1.0.19'
-gem 'devise'
+gem 'devise', '1.5.3'
 
 group :development do
   gem 'rspec-rails', '2.6.1'
@@ -21,5 +21,6 @@ group :test do
   gem 'capybara', '1.1.2'
   gem 'database_cleaner', '0.7.1'
   gem 'launchy', '2.0.5'
+  gem 'escape_utils', '0.2.4'
 end
 

@@ -2,6 +2,10 @@
   width: 710px;
 }
 
+.invisible {
+  display: none;
+}
+
 body {
   background: #cff;
 }
@@ -251,6 +255,10 @@ table.topics tr td.topic span.timestamp {
   color: #666;
 }
 
+table.topic {
+  border-top: 1px solid #ccc;
+}
+
 table.messages {
   margin-top: 1em;
 }
@@ -270,6 +278,22 @@ table.messages tr td.message span.timestamp {
   float: right;
   font-size: 85%;
   color: #666;
+}
+
+ul.topicmenu {
+  list-style: none;     
+  border-top: 1px solid #ccc;
+  margin: 0 0 2em;
+  padding: 0;
+  float: left;
+}
+
+ul.topicmenu li {
+  display: inline;  
+}
+
+ul.topicmenu li a {
+  padding: 0 5px;
 }
 
 div.user_info img {
