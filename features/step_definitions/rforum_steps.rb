@@ -64,3 +64,16 @@ end
 Then /^a message containing "([^"]*)" should be in a topic titled "([^"]*)"$/ do |message_content, topic_title|
   Message.find_by_content(message_content).topic.title.should == topic_title
 end
+
+Then /^I should be on the new message page in a topic titled "([^"]*)"$/ do |title|
+  topic = Topic.find_by_title(title)
+  current_path.should == topic_messages_path(topic)
+end
+
+Then /^I shoud see an error explanation "([^"]*)"$/ do |error|
+  find('#error_explanation').find('ul').should have_content(error)
+end
+
+Then /^I should see a value "([^"]*)" in a field "([^"]*)"$/ do |value, field|
+  find_field(field).value.should == value
+end

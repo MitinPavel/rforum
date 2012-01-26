@@ -37,4 +37,16 @@ describe Message do
 #    message.topic_id.should == @topic.id
 #    message.topic.should == @topic
 #  end
+
+  describe "validations of a new instance belonging to a topic" do
+    before(:each) do
+      @message = @topic.messages.new(@attr)
+    end
+  
+    subject { @message }
+
+    it { should ensure_length_of(:content).
+                  is_at_least(3).
+                  is_at_most(1000) }
+  end
 end

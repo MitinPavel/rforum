@@ -38,10 +38,10 @@ describe MessagesController do
   describe "POST 'create'" do
     login_user
 
-    it "should redirect to the topic page" do
-      post :create, :micropost => @attr, :topic_id => @topic
-      response.should redirect_to(topic_path(@topic))
-    end
+#    it "should redirect to the topic page" do
+#      post :create, :micropost => @attr, :topic_id => @topic
+#      response.should redirect_to(topic_path(@topic))
+#    end
 
     it "should create a message" do
       lambda do

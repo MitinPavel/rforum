@@ -9,8 +9,11 @@ class MessagesController < ApplicationController
   def create
     @topic = Topic.find(params[:topic_id])
     @message = @topic.messages.build(params[:message])
-    @message.save
-    redirect_to topic_path(@topic)
+    if @message.save
+      redirect_to topic_path(@topic)
+    else
+      render 'new'
+    end
   end
 
   def destroy

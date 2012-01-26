@@ -1,9 +1,12 @@
 <h2>Reply to the topic</h2>
 <%= form_for([@topic, @message]) do |f| %>
-  <div class="field">
+  <%= render 'shared/form_messages', :object => f.object %>
+
+  <div class="message_content">
     <%= f.label :content, :class => 'invisible' %>
     <%= f.text_area :content %>
   </div>
+  <i>(3 chars minimum, 1000 chars maximum)</i>
   <div class="actions">
     <%= f.submit "Submit" %>
   </div>
