@@ -131,4 +131,6 @@ describe User do
     end
 
   end
+
+  it { should have_many(:messages) }
 end
