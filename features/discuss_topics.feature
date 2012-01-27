@@ -8,7 +8,7 @@ Scenario: Adding a message on topic
     | Content   | Topic             |
     | cuke      | Title: BDD        |
     | message 1 | Title: count to 2 |
-  And I am a signed-in user
+  And I am signed-in as a user "John"
   And I am on the page showing a topic with the title "BDD"
   And I follow "Post reply"
   And I fill in "Content" with "true"
@@ -26,7 +26,7 @@ Scenario: Failing to add an invalid message
   Given the following topic exists:
    | Title      |
    | validate   |
-  And I am a signed-in user
+  And I am signed-in as a user "John"
   And I am on the page showing a topic with the title "validate"
   And I follow "Post reply"
   And I fill in "Content" with "no"

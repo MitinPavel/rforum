@@ -39,8 +39,8 @@ Then /^I should not see a message with the content "([^"]*)"$/ do |content|
   page.should_not have_content(content)
 end
 
-Given /^I am a signed\-in user$/ do
-  user = Factory(:user)
+Given /^I am signed\-in as a user "([^"]*)"$/ do |user_name|
+  user = Factory(:user, :name => user_name)
   visit root_path
   click_link('Login')
   fill_in('Email', :with => user.email)
